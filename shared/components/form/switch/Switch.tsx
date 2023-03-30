@@ -33,7 +33,7 @@ const TwSwitch: FC<IProps> = forwardRef<HTMLInputElement, IProps>(
             {({ checked }) => (
               <button
                 className={`${
-                  checked ? 'bg-blue-600' : 'bg-gray-200'
+                  checked ? 'bg-blue-600 dark:bg-blue-950' : 'bg-gray-200'
                 } relative inline-flex h-6 w-11 items-center rounded-full`}
               >
                 <span
@@ -55,5 +55,7 @@ const TwSwitch: FC<IProps> = forwardRef<HTMLInputElement, IProps>(
     );
   }
 );
+
+TwSwitch.displayName = 'TwSwitch';
 
 export default TwSwitch;
