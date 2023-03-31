@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import TwSwitch from '@app/shared/components/form/switch/Switch';
+import { ClientSideColorMode } from '@app/shared/components/color-mode/ColorMode';
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <main>
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <TwSwitch defaultEnable={true} />
+        <ClientSideColorMode />
       </main>
     </>
   );
