@@ -4,11 +4,15 @@ import React from 'react';
 import TwSwitch from '../form/switch/Switch';
 
 const ColorMode = () => {
-  const { colorMode, setColorMode } = useTheme();
+  const { colorMode, updateColorMode } = useTheme();
 
   console.log('color mode', colorMode);
 
-  return <TwSwitch enabled={colorMode === 'light'} />;
+  const handleChange = (isLightMode: any) => {
+    updateColorMode?.(isLightMode ? 'light' : 'dark');
+  };
+
+  return <TwSwitch enabled={colorMode === 'light'} onChange={handleChange} />;
 };
 
 export default ColorMode;
