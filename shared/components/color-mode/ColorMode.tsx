@@ -1,5 +1,5 @@
 import WithClientOnlyComp from '@app/shared/hoc/withClientOnlyComp';
-import { useTheme } from '@app/shared/hook/theme/use-them';
+import { useTheme } from '@app/shared/hook/theme/use-theme';
 import React from 'react';
 import TwSwitch from '../form/switch/Switch';
 
