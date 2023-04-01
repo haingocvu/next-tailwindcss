@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { ClientSideColorMode } from '@app/shared/components/color-mode/ColorMode';
+import { ClientOnlyColorModeSwitch } from '@app/shared/components/color-mode/ColorMode';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold underline dark:text-cyan-950 text-green-400">
           Hello world!
         </h1>
-        <ClientSideColorMode />
+        <ClientOnlyColorModeSwitch />
       </main>
     </>
   );

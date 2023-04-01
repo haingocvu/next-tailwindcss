@@ -14,9 +14,9 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [colorMode, setColorMode] = useState<ColorMode>(mode);
 
   const updateColorMode = (colorMode: ColorMode) => {
-    localStorage.theme = colorMode;
-    updateColorModeToDom(colorMode);
-    setColorMode(colorMode);
+    localStorage.theme = colorMode === 'dark' ? 'light' : 'dark';
+    updateColorModeToDom(colorMode === 'dark' ? 'light' : 'dark');
+    setColorMode((colorMode) => (colorMode === 'dark' ? 'light' : 'dark'));
   };
 
   return (
