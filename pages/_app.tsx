@@ -1,11 +1,12 @@
+import { getDefaultLayout } from '@app/shared/components/layout';
 import ThemeProvider from '@app/shared/components/theme/ThemeProvider';
+import { AppPropsWithLayout } from '@app/shared/models/PageInterface';
 import '@app/styles/globals.css';
-import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? getDefaultLayout;
+
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <ThemeProvider>{getLayout(<Component {...pageProps} />)}</ThemeProvider>
   );
 }
