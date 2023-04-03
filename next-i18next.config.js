@@ -9,6 +9,7 @@ module.exports = {
   i18n: {
     defaultLocale: 'vi',
     locales: ['en', 'vi'],
+    localeDetection: false,
   },
   /** To avoid issues when deploying to some paas (vercel...) */
   localePath:

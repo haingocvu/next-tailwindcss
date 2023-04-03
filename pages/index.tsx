@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import { ClientOnlyColorModeSwitch } from '@app/shared/components/color-mode/ColorMode';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { US, VN } from 'country-flag-icons/react/3x2';
 
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import LanguageSelect from '@app/shared/components/language/LanguageSelect';
+import TwSwitch from '@app/shared/components/form/switch/Switch';
 
 type Props = {
   // Add custom props here
@@ -25,6 +28,10 @@ export default function Home() {
           {t('description')}
         </h1>
         <ClientOnlyColorModeSwitch />
+        <LanguageSelect />
+        <TwSwitch />
+        <US title="United States" className="w-6" />
+        <VN title="Viet nam" className="w-12" />
       </main>
     </>
   );
