@@ -7,7 +7,6 @@ import {
   SetStateAction,
 } from 'react';
 import { Switch } from '@headlessui/react';
-import DefaultIcon from './icons/Default';
 
 interface IProps extends ComponentPropsWithRef<any> {
   name?: string;
@@ -19,15 +18,7 @@ interface IProps extends ComponentPropsWithRef<any> {
 
 const TwSwitch: FC<IProps> = forwardRef<HTMLInputElement, IProps>(
   (props, ref) => {
-    const {
-      name,
-      enabled,
-      defaultEnable,
-      fallbackLabel,
-      onChange,
-      activeIcon,
-      inActiveIcon,
-    } = props;
+    const { name, enabled, defaultEnable, fallbackLabel, onChange } = props;
 
     return (
       <Switch.Group>
