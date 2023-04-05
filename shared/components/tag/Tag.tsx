@@ -21,7 +21,7 @@ const Tag: FC<IProps> = (props) => {
       className={`inline-flex flex-row items-start bg-yellow-300 rounded-2xl -rotate-12 ${sizingOuterClasses}`}
     >
       <span
-        className={`inline-block ${sizingInnerClasses} normal not-italic font-bold font font-sans h-3 tracking-tight text-black -rotate-12`}
+        className={`inline-block ${sizingInnerClasses} normal not-italic font-bold font-sans h-3 tracking-tight text-black -rotate-12`}
       >
         {children}
       </span>
