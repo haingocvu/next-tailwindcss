@@ -9,6 +9,7 @@ import * as yup from 'yup';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SelectController from '@app/shared/components/form/select/SelectController';
+import Tag from '@app/shared/components/tag/Tag';
 
 type Props = {
   // Add custom props here
