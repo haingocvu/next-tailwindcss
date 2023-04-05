@@ -5,13 +5,20 @@ module.exports = {
     './shared/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    fontFamily: {
-      sans: 'Inter var, sans-serif',
+    extend: {
+      fontSize: {
+        xxs: '0.5rem',
+      },
+      lineHeight: {
+        xxs: '0.75rem',
+      },
+      fontFamily: {
+        sans: 'Inter var, sans-serif',
+      },
+      height: {
+        4.5: '32rem',
+      },
     },
-    fontSize: {
-      xxs: '0.5rem',
-    },
-    extend: {},
   },
   plugins: [],
   darkMode: 'class',
