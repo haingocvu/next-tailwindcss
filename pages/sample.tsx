@@ -3,7 +3,7 @@ import { NextPageWithLayout } from '@app/shared/models/PageInterface';
 
 const Sample: NextPageWithLayout = () => {
   return (
-    <div>
+    <div className="px-4 py-8">
       <Tag>New</Tag>
     </div>
   );

@@ -5,12 +5,16 @@ interface IProps extends PropsWithChildren<unknown> {
 }
 
 const Tag: FC<IProps> = (props) => {
-  const { children, size = 's' } = props;
+  const { children, size = 'l' } = props;
   const sizingOuterClasses = `${
-    size === 's' ? 'px-1 py-0.5 h4' : size === 'm' ? 'px-2 py-1' : 'px-3 py-2 '
+    size === 's'
+      ? 'px-1 py-0.5 h-4'
+      : size === 'm'
+      ? 'px-2 py-1 h-7'
+      : 'px-3 py-2 h-10'
   }`;
   const sizingInnerClasses = `${
-    size === 's' ? 'text-xxs' : size === 'm' ? 'text-xs' : 'text-base'
+    size === 's' ? 'text-xxs' : size === 'm' ? 'text-xs/5 h-5' : 'text-base h-6'
   }`;
   return (
     <span
