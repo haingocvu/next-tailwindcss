@@ -17,6 +17,7 @@ module.exports = {
       },
       height: {
         4.5: '32rem',
+        carousel: '44rem',
       },
     },
   },
