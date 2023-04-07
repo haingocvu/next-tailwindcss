@@ -1,4 +1,6 @@
 import React, { FC, PropsWithoutRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
 import Indicator from './indicator/Indicator';
 import Image from 'next/image';
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
@@ -59,14 +61,26 @@ const Carousel: FC<IProps> = (props) => {
           />
         </div>
       )}
-      <Image
-        fill
-        priority
-        className="object-cover"
-        alt="test"
-        loader={loader}
-        src={items[activeIndex]}
-      />
+      <motion.div
+        animate={{ x: `-${activeIndex * 100}vw` }}
+        transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+        className="whitespace-nowrap w-full h-full"
+      >
+        {items.map((img, index) => (
+          <Image
+            key={index}
+            priority={index === 0}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            alt="test"
+            loader={loader}
+            src={img}
+            width="704"
+            height="1280"
+            sizes="100vw"
+            className="w-full h-full inline-block"
+          />
+        ))}
+      </motion.div>
     </div>
   );
 };
