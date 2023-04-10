@@ -5,9 +5,10 @@ import Indicator from './indicator/Indicator';
 import Image from 'next/image';
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import useSlider from '@app/shared/hook/slider/useSlider';
+import { getBase64ImageUrl } from '@app/shared/utils/image/optimize';
 
 interface IProps extends PropsWithoutRef<any> {
-  items: Array<string>;
+  items: Array<any>;
 }
 
 const Carousel: FC<IProps> = (props) => {
@@ -66,20 +67,24 @@ const Carousel: FC<IProps> = (props) => {
         transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
         className="whitespace-nowrap w-full h-full"
       >
-        {items.map((img, index) => (
-          <Image
-            key={index}
-            priority={index === 0}
-            loading={index === 0 ? 'eager' : 'lazy'}
-            alt="test"
-            loader={loader}
-            src={img}
-            width="704"
-            height="1280"
-            sizes="100vw"
-            className="w-full h-full inline-block"
-          />
-        ))}
+        {items.map((img, index) => {
+          return (
+            <Image
+              key={index}
+              priority={index === 0}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              alt="test"
+              loader={loader}
+              src={img.url}
+              width="704"
+              height="1280"
+              sizes="100vw"
+              className="w-full h-full inline-block"
+              placeholder="blur"
+              blurDataURL={img.blurUrl}
+            />
+          );
+        })}
       </motion.div>
     </div>
   );
