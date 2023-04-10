@@ -21,8 +21,9 @@ const withTransition = <P extends ImageProps>(WrappedComponent: FC<P>) => {
       />
     );
   };
+
   _Component.displayName = `withTransition(${
-    WrappedComponent.displayName ?? WrappedComponent.name
+    WrappedComponent.displayName ?? WrappedComponent.name ?? 'Image'
   })`;
   return _Component;
 };
