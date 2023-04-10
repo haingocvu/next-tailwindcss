@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from 'react-icons/md';
 import useSlider from '@app/shared/hook/slider/useSlider';
 import { getBase64ImageUrl } from '@app/shared/utils/image/optimize';
+import TransitionImage from '../image/TransitionImage';
 
 interface IProps extends PropsWithoutRef<any> {
   items: Array<any>;
@@ -69,7 +70,7 @@ const Carousel: FC<IProps> = (props) => {
       >
         {items.map((img, index) => {
           return (
-            <Image
+            <TransitionImage
               key={index}
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}
